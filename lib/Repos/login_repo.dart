@@ -4,29 +4,26 @@ import 'package:blocloginapiproject/BLoC/model/loginResponseModel.dart';
 import 'package:http/http.dart' as http;
 
 class LoginRepo {
+  Future<LoginResponseModel> login(String userName, String password) async {
+    const String url = "https://dummyjson.com/auth/login";
 
- Future login(String userName, String password)async{
+    final loginReqModel = LoginReqModel(username: userName, password: password);
 
-var url="https://dummyjson.com/auth/login";
-LoginReqModel loginReqModel= LoginReqModel(username: userName, password: password);
-http.Response response= await  http.post(Uri.parse(url),
-headers: {'Content-Type':'application/json'},
-body: jsonEncode(loginReqModel.toJson())
+    try {
+      final response = await http.post(
+        Uri.parse(url),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(loginReqModel.toJson()),
+      );
 
-);
-try{
-if(response.statusCode==200){
-  var resp = response.body;
-  var respBody=jsonDecode(resp);
-  return LoginResponseModel.fromJson(respBody);
-}else{
-  return LoginResponseModel();
-}
-
-}
-catch(e){
-  throw Exception(e);
-}
-
+      if (response.statusCode == 200) {
+        final respBody = jsonDecode(response.body);
+        return LoginResponseModel.fromJson(respBody);
+      } else {
+        throw Exception('Login failed with status: ${response.statusCode}');
+      }
+    } catch (e) {
+      throw Exception('Login request failed: $e');
+    }
   }
 }
