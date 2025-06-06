@@ -86,6 +86,7 @@ class _LoginscreenState extends State<Loginscreen> {
                                 if (value!.isEmpty) {
                                   return "Please enter your password";
                                 }
+                                return null;
                               },
                               controller: passwordController,
                               decoration: const InputDecoration(
