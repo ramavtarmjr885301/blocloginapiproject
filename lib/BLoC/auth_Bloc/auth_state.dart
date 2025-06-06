@@ -1,4 +1,4 @@
-import 'package:blocloginapiproject/Utils/enum.dart';
+import 'package:blocloginapiproject/utils/states.dart';
 import 'package:equatable/equatable.dart';
 
 class Authstate extends Equatable {

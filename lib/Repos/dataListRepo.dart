@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:blocloginapiproject/BLoC/model/postsListModel.dart';
+import 'package:blocloginapiproject/model/postsListModel.dart';
 import 'package:http/http.dart' as http;
 
 class DatalistRepo {

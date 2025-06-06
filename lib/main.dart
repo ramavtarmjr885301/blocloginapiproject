@@ -1,7 +1,8 @@
+import 'package:blocloginapiproject/BLoC/DataBloc/data_bloc.dart';
 import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_bloc.dart';
-import 'package:blocloginapiproject/BLoC/home_bloc/home_bloc.dart';
-import 'package:blocloginapiproject/Repos/dataListRepo.dart';
-import 'package:blocloginapiproject/views/loginScreen.dart';
+import 'package:blocloginapiproject/BLoC/counter_bloc/counter_bloc.dart';
+import 'package:blocloginapiproject/routes/routes.dart';
+import 'package:blocloginapiproject/routes/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,11 +21,15 @@ class MyApp extends StatelessWidget {
             create: (context) => AuthBloc(),
           ),
           BlocProvider(
-            create: (context) => HomeBloc(repository: DatalistRepo()),
+            create: (context) => CounterBloc(),
+          ),
+          BlocProvider(
+            create: (context) => DataBloc(),
           )
         ],
-        child:const MaterialApp(
-          home: Loginscreen(),
+        child: const MaterialApp(
+          initialRoute: RoutesNames.loginScreen,
+          onGenerateRoute: Routes.generateRoute,
         ));
   }
 }

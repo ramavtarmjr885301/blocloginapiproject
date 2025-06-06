@@ -1,9 +1,8 @@
 import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_event.dart';
 import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_state.dart';
 import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_bloc.dart';
-import 'package:blocloginapiproject/BLoC/model/loginReqModel.dart';
-import 'package:blocloginapiproject/Utils/enum.dart';
 import 'package:blocloginapiproject/custom_aap_bar.dart';
+import 'package:blocloginapiproject/utils/states.dart';
 import 'package:blocloginapiproject/views/home_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
