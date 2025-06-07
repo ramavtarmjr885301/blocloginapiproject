@@ -1,5 +1,5 @@
-import 'package:blocloginapiproject/model/postsListModel.dart';
-import 'package:blocloginapiproject/utils/states.dart';
+import 'package:bloc_practice/model/postsListModel.dart';
+import 'package:bloc_practice/utils/states.dart';
 import 'package:equatable/equatable.dart';
 
  class DataState extends Equatable {

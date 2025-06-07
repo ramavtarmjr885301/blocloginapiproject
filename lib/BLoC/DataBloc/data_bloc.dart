@@ -1,7 +1,7 @@
-import 'package:blocloginapiproject/BLoC/DataBloc/data_event.dart';
-import 'package:blocloginapiproject/BLoC/DataBloc/data_state.dart';
-import 'package:blocloginapiproject/Repos/dataListRepo.dart';
-import 'package:blocloginapiproject/utils/states.dart';
+import 'package:bloc_practice/BLoC/DataBloc/data_event.dart';
+import 'package:bloc_practice/BLoC/DataBloc/data_state.dart';
+import 'package:bloc_practice/Repos/dataListRepo.dart';
+import 'package:bloc_practice/utils/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DataBloc extends Bloc<DataEvent, DataState> {

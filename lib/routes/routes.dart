@@ -1,8 +1,8 @@
 // static Route<dynamic> generateRoute(RouteSettings settings)
-import 'package:blocloginapiproject/routes/routes_names.dart';
-import 'package:blocloginapiproject/views/counter_Screen.dart';
-import 'package:blocloginapiproject/views/home_screen.dart';
-import 'package:blocloginapiproject/views/loginScreen.dart';
+import 'package:bloc_practice/routes/routes_names.dart';
+import 'package:bloc_practice/views/counter_Screen.dart';
+import 'package:bloc_practice/views/home_screen.dart';
+import 'package:bloc_practice/views/loginScreen.dart';
 import 'package:flutter/material.dart';
 
 // class Routes {

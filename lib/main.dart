@@ -1,8 +1,9 @@
-import 'package:blocloginapiproject/BLoC/DataBloc/data_bloc.dart';
-import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_bloc.dart';
-import 'package:blocloginapiproject/BLoC/counter_bloc/counter_bloc.dart';
-import 'package:blocloginapiproject/routes/routes.dart';
-import 'package:blocloginapiproject/routes/routes_names.dart';
+
+import 'package:bloc_practice/BLoC/DataBloc/data_bloc.dart';
+import 'package:bloc_practice/BLoC/auth_Bloc/auth_bloc.dart';
+import 'package:bloc_practice/BLoC/counter_bloc/counter_bloc.dart';
+import 'package:bloc_practice/routes/routes.dart';
+import 'package:bloc_practice/routes/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

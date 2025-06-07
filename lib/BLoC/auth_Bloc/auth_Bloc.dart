@@ -1,9 +1,8 @@
-import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_event.dart';
-import 'package:blocloginapiproject/BLoC/auth_Bloc/auth_state.dart';
-import 'package:blocloginapiproject/Repos/login_repo.dart';
-import 'package:blocloginapiproject/routes/routes_names.dart';
-import 'package:blocloginapiproject/utils/states.dart';
-import 'package:blocloginapiproject/views/home_screen.dart';
+import 'package:bloc_practice/BLoC/auth_Bloc/auth_event.dart';
+import 'package:bloc_practice/BLoC/auth_Bloc/auth_state.dart';
+import 'package:bloc_practice/Repos/login_repo.dart';
+import 'package:bloc_practice/routes/routes_names.dart';
+import 'package:bloc_practice/utils/states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,6 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, Authstate> {
     }).onError((error, stackTrace) {
       print(error);
       emit(state.copyWith(loginStatus: ApiStatus.errorState));
+      return null;
     });
   }
 

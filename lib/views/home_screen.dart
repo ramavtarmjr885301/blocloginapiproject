@@ -1,8 +1,8 @@
-import 'package:blocloginapiproject/BLoC/DataBloc/data_bloc.dart';
-import 'package:blocloginapiproject/BLoC/DataBloc/data_event.dart';
-import 'package:blocloginapiproject/BLoC/DataBloc/data_state.dart';
-import 'package:blocloginapiproject/custom_aap_bar.dart';
-import 'package:blocloginapiproject/routes/routes_names.dart';
+import 'package:bloc_practice/BLoC/DataBloc/data_bloc.dart';
+import 'package:bloc_practice/BLoC/DataBloc/data_event.dart';
+import 'package:bloc_practice/BLoC/DataBloc/data_state.dart';
+import 'package:bloc_practice/custom_aap_bar.dart';
+import 'package:bloc_practice/routes/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
