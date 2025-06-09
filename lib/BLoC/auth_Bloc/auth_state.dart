@@ -1,5 +1,5 @@
-import 'package:bloc_practice/utils/states.dart';
-import 'package:equatable/equatable.dart';
+
+import '../../barrel.dart';
 
 class Authstate extends Equatable {
   final ApiStatus loginStatus;

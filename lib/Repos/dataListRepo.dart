@@ -1,8 +1,6 @@
-import 'dart:convert';
 
-import 'package:bloc_practice/model/postsListModel.dart';
+import '../barrel.dart';
 import 'package:http/http.dart' as http;
-
 class DatalistRepo {
   Future<List<PostsListsModel>> fetchList() async {
     print("hitting");

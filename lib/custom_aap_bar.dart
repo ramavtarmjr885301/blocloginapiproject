@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+import 'barrel.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool centerTitle;

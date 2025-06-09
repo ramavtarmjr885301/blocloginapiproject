@@ -1,4 +1,6 @@
-import 'package:equatable/equatable.dart';
+
+
+import '../../barrel.dart';
 
 abstract class CounterEvent extends Equatable {
   const CounterEvent();

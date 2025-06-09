@@ -1,4 +1,5 @@
-import 'package:equatable/equatable.dart';
+
+import '../../barrel.dart';
 
 class CounterState extends Equatable{
   final int counter;

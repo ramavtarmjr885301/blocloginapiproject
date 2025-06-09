@@ -1,8 +1,6 @@
-import 'package:bloc_practice/BLoC/DataBloc/data_event.dart';
-import 'package:bloc_practice/BLoC/DataBloc/data_state.dart';
-import 'package:bloc_practice/Repos/dataListRepo.dart';
-import 'package:bloc_practice/utils/states.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
+
+import '../../barrel.dart';
 
 class DataBloc extends Bloc<DataEvent, DataState> {
   final DatalistRepo _datalistRepo = DatalistRepo();

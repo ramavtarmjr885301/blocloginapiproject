@@ -1,8 +1,8 @@
-import 'package:bloc_practice/model/postsListModel.dart';
-import 'package:bloc_practice/utils/states.dart';
-import 'package:equatable/equatable.dart';
 
- class DataState extends Equatable {
+
+ import '../../barrel.dart';
+
+class DataState extends Equatable {
   final ApiStatus datastatus;
   final List<PostsListsModel> postsData;
   const DataState({this.datastatus = ApiStatus.successState, this.postsData=const[]});
