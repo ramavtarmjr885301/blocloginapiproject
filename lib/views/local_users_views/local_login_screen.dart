@@ -1,16 +1,21 @@
-import '../barrel.dart';
+import 'package:bloc_practice/BLoC/local_auth_bloc/local_auth_bloc.dart';
+import 'package:bloc_practice/BLoC/local_auth_bloc/local_auth_event.dart';
 
-class Loginscreen extends StatefulWidget {
-  const Loginscreen({super.key});
+import '../../barrel.dart';
+
+class LocalLoginScreen extends StatefulWidget {
+  const LocalLoginScreen({super.key});
 
   @override
-  State<Loginscreen> createState() => _LoginscreenState();
+  State<LocalLoginScreen> createState() => _LocalLoginScreenState();
 }
 
-class _LoginscreenState extends State<Loginscreen> {
-  final GlobalKey<FormState> loginformKey = GlobalKey<FormState>();
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+class _LocalLoginScreenState extends State<LocalLoginScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class _LoginscreenState extends State<Loginscreen> {
                 height: MediaQuery.of(context).size.height * .15,
               ),
                const Text(
-                "Online Database Screen!",
+                "Local Database Screen!",
                 style: TextStyle(fontSize: 32),
               ),
               const Text(
@@ -40,20 +45,23 @@ class _LoginscreenState extends State<Loginscreen> {
                 height: 100,
               ),
               Form(
-                  key: loginformKey,
+                  key: _formKey,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 20, left: 20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Username"),
+                        const Text("Email"),
                         TextFormField(
-                          controller: usernameController,
+                          controller: _emailController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Enter your username';
+                              return 'Enter your email';
                             }
+                            if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                            return 'Please enter a valid email';
+                          }
 
                             return null;
                           },
@@ -61,7 +69,7 @@ class _LoginscreenState extends State<Loginscreen> {
                               prefixIcon: Icon(
                                 Icons.email_outlined,
                               ),
-                              hintText: "Enter Your username",
+                              hintText: "Enter Your Email",
                               border: OutlineInputBorder()),
                         ),
                         const SizedBox(
@@ -70,12 +78,15 @@ class _LoginscreenState extends State<Loginscreen> {
                         const Text("Password"),
                         TextFormField(
                           validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Please enter your password";
-                            }
-                            return null;
-                          },
-                          controller: passwordController,
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          if (value.length < 6) {
+                            return 'Password must be at least 6 characters';
+                          }
+                          return null;
+                        },
+                          controller: _passwordController,
                           decoration: const InputDecoration(
                               prefixIcon: Icon(
                                 Icons.email_outlined,
@@ -106,14 +117,14 @@ class _LoginscreenState extends State<Loginscreen> {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              if(loginformKey.currentState!.validate()){
-                                context.read<AuthBloc>().add(LoginReqEvent(
-                                    userName: usernameController.text,
-                                    password: passwordController.text,
-                                    context: context,
-                                  ));
+                              if (_formKey.currentState!.validate()) {
+                                context.read<LocalAuthBloc>().add(LocalLoginRequested(
+                                      email: _emailController.text,
+                                      password: _passwordController.text,
+                                      context: context,
+                                     
+                                    ));
                               }
-                              
                             },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.amber),
@@ -150,7 +161,9 @@ class _LoginscreenState extends State<Loginscreen> {
                     TextSpan(
                         text: "Sign Up",
                         style: const TextStyle(color: Colors.blue),
-                        recognizer: TapGestureRecognizer()..onTap = () {})
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          Navigator.pushNamed(context, RoutesNames.localSignUpScreen);
+                        })
                   ]))
             ],
           ),

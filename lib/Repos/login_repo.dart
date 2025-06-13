@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:bloc_practice/model/loginReqModel.dart';
-import 'package:bloc_practice/model/loginResponseModel.dart';
+import 'package:bloc_practice/data/model/loginReqModel.dart';
+import 'package:bloc_practice/data/model/loginResponseModel.dart';
 import 'package:http/http.dart' as http;
 
 class LoginRepo {
