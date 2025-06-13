@@ -1,15 +1,15 @@
 
-import '../../barrel.dart';
+// import '../../barrel.dart';
 
-class ToDoState extends Equatable {
-  final ApiStatus todostatus;
+// class ToDoState extends Equatable {
+//   final ApiStatus todostatus;
 
-  const ToDoState({this.todostatus = ApiStatus.initialState});
+//   const ToDoState({this.todostatus = ApiStatus.initialState});
 
-  ToDoState copyWith({ApiStatus? todostatus}) {
-    return ToDoState(todostatus: todostatus ?? this.todostatus);
-  }
+//   ToDoState copyWith({ApiStatus? todostatus}) {
+//     return ToDoState(todostatus: todostatus ?? this.todostatus);
+//   }
 
-  @override
-  List<Object> get props => [todostatus];
-}
+//   @override
+//   List<Object> get props => [todostatus];
+// }
